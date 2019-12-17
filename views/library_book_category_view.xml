@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <!-- formulario para libro-->
+        <record id="library_category_form_view" model="ir.ui.view">
+            <field name="name">Libary Category Form</field>
+            <field name="model">library.category</field>
+            <field name="arch" type="xml">
+                <form string="Category form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="book_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Vista tree-->
+        <record id="library_category_tree_view" model="ir.ui.view">
+            <field name="name">Libary Category Tree</field>
+            <field name="model">library.category</field>
+            <field name="arch" type="xml">
+                <tree string="Category tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Action view-->
+        <record id="action_library_category_view" model="ir.actions.act_window">
+            <field name="name">Category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear nuevas categorías
+              </p>
+            </field>
+        </record>
+
+        <!--Crear menus-->
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="library_category_menuitem" name="Category" sequence="1" parent="library_category" action="action_library_category_view"/>
+
+    </data>
+</odoo>

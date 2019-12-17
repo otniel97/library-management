@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Library Management",
+    'name': "Library Managements",
 
     'summary': """
-        Library Management""",
+        Library Managements""",
 
     'description': """
         Long description of module's purpose
@@ -25,7 +25,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         #'views/views.xml',
-        #'views/templates.xml',
+        'views/library_book_view.xml',
+        'views/library_book_category_view.xml',
     ],
     'installable': True,
     # only loaded in demonstration mode

@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <!-- formulario para libro-->
+        <record id="library_book_form_view" model="ir.ui.view">
+            <field name="name">Libary Book Form</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <form string="Book form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="isbn"/>
+                            <field name="category_ids" widget="many2many_tags"/>
+                            <!--field name="category_id"/-->
+                        </group>
+                        <group>
+                            <field name="categ_count"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Vista tree-->
+        <record id="library_book_tree_view" model="ir.ui.view">
+            <field name="name">Libary Book Tree</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <tree string="Book tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="isbn"/>
+                    <field name="categ_count"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Action view-->
+        <record id="action_library_book_view" model="ir.actions.act_window">
+            <field name="name">Book</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.book</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Crear nuevos libros
+              </p>
+            </field>
+        </record>
+
+        <!--Crear menus-->
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="library_root" name="Library" sequence="0"/>
+        <menuitem id="library_category" name="Library" sequence="1" parent="library_root"/>
+        <menuitem id="library_book" name="Book" sequence="1" parent="library_category" action="action_library_book_view"/>
+
+    </data>
+</odoo>

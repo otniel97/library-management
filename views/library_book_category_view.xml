@@ -21,7 +21,7 @@
 
         <!--Vista tree-->
         <record id="library_category_tree_view" model="ir.ui.view">
-            <field name="name">Libary Category Tree</field>
+            <field name="name">Library Category Tree</field>
             <field name="model">library.category</field>
             <field name="arch" type="xml">
                 <tree string="Category tree">

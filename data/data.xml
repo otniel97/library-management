@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="library_book_l" model="library.book">
+            <field name="name">Vuejs</field>
+            <field name="description">Framework JS</field>
+            <field name="isbn">otniel</field>
+        </record>
+        <record id="library_book_l" model="library.book">
+            <field name="name">Odoo 12</field>
+            <field name="description">Curso Técnico</field>
+            <field name="isbn">johangely</field>
+        </record>
+    </data>
+</odoo>
